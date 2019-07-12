@@ -1,0 +1,29 @@
+{
+  "name": "einsteinagenda",
+  "version": "1.0.0",
+  "description": "Agendamentos de consultas do hospital Albert Einstein",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbatistuti/EinsteinAgenda.git"
+  },
+  "author": "Gustavo Batistuti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbatistuti/EinsteinAgenda/issues"
+  },
+  "homepage": "https://github.com/gbatistuti/EinsteinAgenda#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql2": "^1.6.5",
+    "nodemon": "^1.19.1",
+    "sequelize": "^5.10.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^5.5.0"
+  }
+}
