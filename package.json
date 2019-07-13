@@ -4,7 +4,8 @@
   "description": "Agendamentos de consultas do hospital Albert Einstein",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,11 +20,12 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "morgan": "^1.9.1",
     "mysql2": "^1.6.5",
-    "nodemon": "^1.19.1",
     "sequelize": "^5.10.0"
   },
   "devDependencies": {
+    "nodemon": "^1.19.1",
     "sequelize-cli": "^5.5.0"
   }
 }
