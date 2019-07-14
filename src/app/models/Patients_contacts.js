@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) => {
       contact_number: DataTypes.STRING(14),
       email: DataTypes.STRING(45),
     });
+
+    Patients_contacts.associate = (models) => {
+      Patients_contacts.hasOne(models.Patients, {targetKey: 'id_contact_patient', foreignKey: 'id'});
+    }
   
     return Patients_contacts;
   }

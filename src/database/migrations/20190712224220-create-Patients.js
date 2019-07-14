@@ -34,7 +34,8 @@ module.exports = {
         references: {
           model: 'Patients_contacts',
           key: 'id'
-        }
+        },
+        onDelete: 'CASCADE',
       },
 
       createdAt: DataTypes.DATE,
