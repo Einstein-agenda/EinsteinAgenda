@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable('Pacientes', {
+    return queryInterface.createTable('Patients', {
 
       id: {
         allowNull: false,
@@ -11,7 +11,7 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
 
-      nome: {
+      name: {
         allowNull: false,
         type: DataTypes.STRING(50),
       },
@@ -28,11 +28,11 @@ module.exports = {
         unique: true,
       },
 
-      id_contato_paciente: {
+      id_patient_contact: {
         allowNull: false,
         type: DataTypes.INTEGER,
         references: {
-          model: 'Contatos_Pacientes',
+          model: 'Patients_contacts',
           key: 'id'
         }
       },
@@ -44,6 +44,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('Pacientes');
+    return queryInterface.dropTable('Patients');
   }
 };

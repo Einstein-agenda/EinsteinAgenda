@@ -2,26 +2,26 @@
 
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable('Medicos_tem_Especialidades', {
+    return queryInterface.createTable('Doctors_has_Specialties', {
 
-      id_medico: {
+      id_doctor: {
         allowNull: false,
         autoIncrement: false,
         primaryKey: true,
         type: DataTypes.INTEGER,
         references: {
-          model: 'Medicos',
+          model: 'Doctors',
           key: 'id'
         }
       },
 
-      id_especialidade: {
+      id_specialty: {
         allowNull: false,
         autoIncrement: false,
         primaryKey: true,
         type: DataTypes.INTEGER,
         references: {
-          model: 'Especialidades',
+          model: 'Specialties',
           key: 'id'
         }
       },
@@ -33,6 +33,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('Medicos_tem_Especialidades');
+    return queryInterface.dropTable('Doctors_has_Specialties');
   }
 };

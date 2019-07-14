@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable('Agendamentos', {
+    return queryInterface.createTable('Scheduling', {
 
       id: {
         allowNull: false,
@@ -11,30 +11,30 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
 
-      data: {
+      date: {
         allowNull: false,
         type: DataTypes.DATE,
       },
 
-      hora: {
+      time: {
         allowNull: false,
         type: DataTypes.TIME,
       },
 
-      id_paciente: {
+      id_patient: {
         allowNull: false,
         type: DataTypes.INTEGER,
         references: {
-          model: 'Pacientes',
+          model: 'Patients',
           key: 'id'
         }
       },
 
-      id_medico: {
+      id_doctor: {
         allowNull: false,
         type: DataTypes.INTEGER,
         references: {
-          model: 'Medicos',
+          model: 'Doctors',
           key: 'id'
         }
       },
@@ -46,7 +46,7 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('Agendamentos');
+    return queryInterface.dropTable('Scheduling');
   }
 };
 

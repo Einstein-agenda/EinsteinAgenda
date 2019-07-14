@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const indexRoutes = require('./src/api/routes/index');
+app.use('/', indexRoutes); 
 
-const productRoutes = require('./api/routes/products');
-const orderRoutes = require('./api/routes/orders');
+const productRoutes = require('./src/api/routes/products');
+const orderRoutes = require('./src/api/routes/orders');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));

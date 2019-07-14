@@ -1,8 +1,8 @@
 {
   "name": "einsteinagenda",
   "version": "1.0.0",
-  "description": "Agendamentos de consultas do hospital Albert Einstein",
-  "main": "index.js",
+  "description": "Teste agendamentos de consultas do hospital Albert Einstein",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"

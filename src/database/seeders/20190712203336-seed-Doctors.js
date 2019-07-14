@@ -1,21 +1,21 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Medicos', [
+  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Doctors', [
     {
-      nome: 'Roberto',
+      name: 'Roberto',
       crm: '12365478/SP',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      nome: 'Juliana',
+      name: 'Juliana',
       crm: '45321/SP',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      nome: 'Marisa',
+      name: 'Marisa',
       crm: '18743654/SP',
       createdAt: new Date(),
       updatedAt: new Date()
@@ -23,6 +23,6 @@ module.exports = {
   ],{}),
     
 
-  down: (queryInterface, Sequelize) => queryInterface.bulkInsert('Medicos', null, {}),
+  down: (queryInterface, Sequelize) => queryInterface.bulkInsert('Doctors', null, {}),
 };
   

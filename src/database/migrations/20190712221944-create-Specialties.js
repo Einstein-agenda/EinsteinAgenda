@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable('Especialidades', {
+    return queryInterface.createTable('Specialties', {
 
       id: {
         allowNull: false,
@@ -11,7 +11,7 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
       
-      nome: {
+      specialty: {
         allowNull: false,
         type: DataTypes.STRING(45),
       },
@@ -23,6 +23,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('Especialidades');
+    return queryInterface.dropTable('Specialties');
   }
 };

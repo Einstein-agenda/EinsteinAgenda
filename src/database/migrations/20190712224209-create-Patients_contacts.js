@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable('Contatos_Pacientes', {
+    return queryInterface.createTable('Patients_contacts', {
       
       id: {
         allowNull: false,
@@ -11,22 +11,22 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
 
-      tel_fixo: {
+      landline_number: {
         allowNull: true,
         type: DataTypes.STRING(13),
       },
 
-      tel_com: {
+      comercial_phone_number: {
         allowNull: true,
         type: DataTypes.STRING(13),
       },
 
-      cel_princ: {
+      mob_phone_number: {
         allowNull: false,
         type: DataTypes.STRING(14),
       },
 
-      cel_rec: {
+      contact_number: {
         allowNull: true,
         type: DataTypes.STRING(14),
       },
@@ -43,6 +43,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('Contatos_Pacientes');
+    return queryInterface.dropTable('Patients_contacts');
   }
 };

@@ -1,24 +1,24 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Especialidades', [
+  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Specialties', [
     {
-      nome: 'Obstetra',
+      specialty: 'Obstetra',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      nome: 'Pediatra',
+      specialty: 'Pediatra',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      nome: 'Nutrólogo',
+      specialty: 'Nutrólogo',
       createdAt: new Date(),
       updatedAt: new Date()
     }
   ],{}),
     
 
-  down: (queryInterface, Sequelize) => queryInterface.bulkInsert('Especialidades', null, {}),
+  down: (queryInterface, Sequelize) => queryInterface.bulkInsert('Specialties', null, {}),
 };
