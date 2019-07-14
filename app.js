@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const indexRoutes = require('./src/api/routes/index');
 const doctorRoutes = require('./src/api/routes/doctors');
 const patientRoutes = require('./src/api/routes/patients');
+const loginRoutes = require('./src/api/routes/login');
 const schedulingRoutes = require('./src/api/routes/schedulings');
 
 app.use(morgan('dev'));
@@ -20,8 +20,8 @@ app.use((req, res, next) => {
     }
     next();
 });
-
-app.use('/', indexRoutes); 
+ 
+app.use('/login', loginRoutes); 
 app.use('/medicos', doctorRoutes);
 app.use('/pacientes', patientRoutes);
 app.use('/agendamentos', schedulingRoutes);
