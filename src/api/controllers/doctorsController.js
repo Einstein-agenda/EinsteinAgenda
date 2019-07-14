@@ -8,6 +8,19 @@ exports.getDoctors = (req, res) => {
     })
 }
 
+exports.getDoctorCredentials = (req, res) => {
+    models.Doctors.findOne({
+        where: {
+            email: req.body.email,
+            password: req.body.password,
+        }
+    }).then(doctor => {
+        res.send(doctor)
+    }).catch(err => {
+        res.status(400).send({ message: 'an error has occurred', err })
+    })
+}
+
 exports.getOneDoctor = (req, res) => {
     models.Doctors.findOne({
         where: {
