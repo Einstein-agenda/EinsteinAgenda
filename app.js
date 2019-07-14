@@ -4,7 +4,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const indexRoutes = require('./src/api/routes/index');
 const doctorRoutes = require('./src/api/routes/doctors');
-const patientRoutes = require('./src/api/routes/');
+const patientRoutes = require('./src/api/routes/patients');
+const schedulingRoutes = require('./src/api/routes/schedulings');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -21,7 +22,9 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRoutes); 
-app.use('/doctors', doctorRoutes);
+app.use('/medicos', doctorRoutes);
+app.use('/pacientes', patientRoutes);
+app.use('/agendamentos', schedulingRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');

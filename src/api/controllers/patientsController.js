@@ -31,10 +31,11 @@ exports.insertPatient = (req, res) => {
 }
 
 exports.updatePatient = (req, res) => {
+    const id = req.params.id;
     const patient = req.body;
     models.Patients.update(patient, {
         where: {
-            id: req.body.id
+            id: id
         }
     }).then(data => {
         res.send(data)
@@ -45,10 +46,10 @@ exports.updatePatient = (req, res) => {
 }
 
 exports.deletePatient = (req, res) => {
-    const patient = req.body;
+    const id = req.params.id;
     models.Patients.destroy({
         where: {
-            id: patient.id
+            id: id
         }
     }).then(data => {
         if (data === 1) {

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     
     Specialties.associate = (models) => {
       Specialties.belongsToMany(models.Doctors, {
-        through: 'Doctors_has_Specialties',,
+        through: 'Doctors_has_Specialties',
         as: 'id_specialty',
         foreignKey: 'id',
       });

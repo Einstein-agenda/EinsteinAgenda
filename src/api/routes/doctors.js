@@ -15,11 +15,11 @@ router.post('/', (req, res)=>{
     doctorsController.insertDoctor(req, res)
 })
 
-router.put('/', (req, res)=>{
+router.put('/:id', (req, res)=>{
     doctorsController.updateDoctor(req, res)
 })
 
-router.delete('/', (req, res)=>{
+router.delete('/:id', (req, res)=>{
     doctorsController.deleteDoctor(req, res)
 })
 
