@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable('Patients_contacts', {
+    return queryInterface.createTable('Patients_phones', {
       
       id: {
         allowNull: false,
@@ -26,16 +26,6 @@ module.exports = {
         type: DataTypes.STRING(14),
       },
 
-      contact_number: {
-        allowNull: true,
-        type: DataTypes.STRING(14),
-      },
-
-      email: {
-        allowNull: false,
-        type: DataTypes.STRING(45),
-      },
-
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,
 
@@ -43,6 +33,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('Patients_contacts');
+    return queryInterface.dropTable('Patients_phones');
   }
 };

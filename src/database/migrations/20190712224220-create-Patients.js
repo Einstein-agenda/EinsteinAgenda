@@ -28,11 +28,21 @@ module.exports = {
         unique: true,
       },
 
-      id_patient_contact: {
+      email: {
+        allowNull: false,
+        type: DataTypes.STRING(45),
+      },
+
+      password: {
+        allowNull: false,
+        type: DataTypes.STRING(20),
+      },
+
+      id_patient_phone: {
         allowNull: false,
         type: DataTypes.INTEGER,
         references: {
-          model: 'Patients_contacts',
+          model: 'Patients_phones',
           key: 'id'
         },
         onDelete: 'CASCADE',
