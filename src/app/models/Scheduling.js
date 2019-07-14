@@ -5,6 +5,11 @@ module.exports = (sequelize, DataTypes) => {
       id_pacient: DataTypes.INTEGER,
       id_doctor: DataTypes.INTEGER,
     });
+
+    Scheduling.associate = (models) => {
+      Scheduling.belongsTo(models.Patients, {targetKey: 'id', foreignKey: 'id_pacient'});
+      Scheduling.belongsTo(models.Doctors, {targetKey: 'id', foreignKey: 'id_doctor'});
+    }
   
     return Scheduling;
   }

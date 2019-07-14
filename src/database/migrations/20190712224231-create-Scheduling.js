@@ -27,7 +27,8 @@ module.exports = {
         references: {
           model: 'Patients',
           key: 'id'
-        }
+        },
+        onDelete: 'CASCADE',
       },
 
       id_doctor: {
@@ -36,7 +37,8 @@ module.exports = {
         references: {
           model: 'Doctors',
           key: 'id'
-        }
+        },
+        onDelete: 'CASCADE',
       },
 
       createdAt: DataTypes.DATE,
