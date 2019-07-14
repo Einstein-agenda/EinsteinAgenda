@@ -3,7 +3,8 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const indexRoutes = require('./src/api/routes/index');
-const doctorRoutes = require('./src/api/routes/products');
+const doctorRoutes = require('./src/api/routes/doctors');
+const patientRoutes = require('./src/api/routes/');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
