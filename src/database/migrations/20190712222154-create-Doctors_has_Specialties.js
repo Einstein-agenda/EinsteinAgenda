@@ -4,10 +4,16 @@ module.exports = {
   up: (queryInterface, DataTypes) => {
     return queryInterface.createTable('Doctors_has_Specialties', {
 
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
+      
       id_doctor: {
         allowNull: false,
         autoIncrement: false,
-        primaryKey: true,
         type: DataTypes.INTEGER,
         references: {
           model: 'Doctors',
@@ -19,7 +25,6 @@ module.exports = {
       id_specialty: {
         allowNull: false,
         autoIncrement: false,
-        primaryKey: true,
         type: DataTypes.INTEGER,
         references: {
           model: 'Specialties',

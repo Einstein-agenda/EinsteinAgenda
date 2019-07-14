@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Scheduling', [
+  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Schedulings', [
     {
       date: '2019-10-25',
       time: '10:00:00',
@@ -29,5 +29,5 @@ module.exports = {
   ],{}),
     
 
-  down: (queryInterface, Sequelize) => queryInterface.bulkInsert('Scheduling', null, {}),
+  down: (queryInterface, Sequelize) => queryInterface.bulkInsert('Schedulings', null, {}),
 };

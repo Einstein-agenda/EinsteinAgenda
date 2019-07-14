@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable('Scheduling', {
+    return queryInterface.createTable('Schedulings', {
 
       id: {
         allowNull: false,
@@ -48,7 +48,7 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('Scheduling');
+    return queryInterface.dropTable('Schedulings');
   }
 };
 

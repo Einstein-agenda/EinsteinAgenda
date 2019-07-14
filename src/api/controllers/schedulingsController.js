@@ -1,28 +1,28 @@
 const models = require('../../app/models/index');
 
-exports.getDoctors = (req, res) => {
-    models.Doctors.findAll().then(doctors => {
-        res.send(doctors)
+exports.getSchedulings = (req, res) => {
+    models.Schedulings.findAll().then(scheduling => {
+        res.send(scheduling)
     }).catch(err => {
         res.status(400).send({ message: 'an error has occurred', err })
     })
 }
 
-exports.getOneDoctor = (req, res) => {
-    models.Doctors.findOne({
+exports.getOneScheduling = (req, res) => {
+    models.Schedulings.findOne({
         where: {
             id: req.params.id
         }
-    }).then(doctor => {
-        res.send(doctor)
+    }).then(scheduling => {
+        res.send(scheduling)
     }).catch(err => {
         res.status(400).send({ message: 'an error has occurred', err })
     })
 }
 
-exports.insertDoctor = (req, res) => {
-    const doctor = req.body;
-    models.Doctors.build(doctor).save()
+exports.insertScheduling = (req, res) => {
+    const scheduling = req.body;
+    models.Schedulings.build(scheduling).save()
         .then(data => {
             res.send(data)
         }).catch(err => {
@@ -30,10 +30,10 @@ exports.insertDoctor = (req, res) => {
         })
 }
 
-exports.updateDoctor = (req, res) => {
+exports.updateScheduling = (req, res) => {
     const id = req.params.id;
-    const doctor = req.body;
-    models.Doctors.update(doctor, {
+    const scheduling = req.body;
+    models.Schedulings.update(scheduling, {
         where: {
             id: id
         }
@@ -45,9 +45,9 @@ exports.updateDoctor = (req, res) => {
 
 }
 
-exports.deleteDoctor = (req, res) => {
+exports.deleteScheduling = (req, res) => {
     const id = req.params.id;
-    models.Doctors.destroy({
+    models.Schedulings.destroy({
         where: {
             id: id
         }

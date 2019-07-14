@@ -1,40 +1,27 @@
-const models = require("../../app/models/index");
+const express = require('express');
+const router = express.Router();
+const doctorsController = require('../controllers/doctorsController');
 
-exports.getDoctors = (req, res) => {
-  models.Medicos.findAll({
-    // where: {
-    //   nome: "Marisa"
-    // },
-    // attributes: ["nome", "crm"],
-    // include: [
-    //     {
-    //         model: models.especialidades, required: false,
-    //         where: {
 
-    //         }
-    //     }
-    // ]
-  })
-    .then(doctors => {
-      res.send(doctors);
-    })
-    .catch(err => {
-      res.status(400).send({ message: "an error has occurred", err });
-    });
+router.get('/', (req, res)=>{
+    doctorsController.getDoctors(req, res)
+})
 
-//   models.Medicos.build({
-//     nome: "Marcelo",
-//     crm: "12234/RJ"
-//   }).save();
+router.get('/:id', (req, res)=>{
+    doctorsController.getOneDoctor(req, res)
+})
 
-//   models.Medicos.update(
-//     {
-//         nome: "Marisa Monte"
-//     },
-//     {
-//         where: {
-//             nome: "Marisa"
-//         }
-//     }
-//   );
-};
+router.post('/', (req, res)=>{
+    doctorsController.insertDoctor(req, res)
+})
+
+router.put('/:id', (req, res)=>{
+    doctorsController.updateDoctor(req, res)
+})
+
+router.delete('/:id', (req, res)=>{
+    doctorsController.deleteDoctor(req, res)
+})
+
+module.exports = router;
+

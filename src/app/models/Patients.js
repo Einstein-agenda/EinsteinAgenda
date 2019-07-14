@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
 
   Patients.associate = (models) => {
     Patients.belongsTo(models.Patients_phones, { targetKey: 'id', foreignKey: 'id_patient_phone' });
-    Patients.hasMany(models.Scheduling, { targetKey: 'id_pacient', foreignKey: 'id' });
+    Patients.hasMany(models.Schedulings, { targetKey: 'id_pacient', foreignKey: 'id' });
   }
 
-  return Patients;
+  return Patients; 
 }
