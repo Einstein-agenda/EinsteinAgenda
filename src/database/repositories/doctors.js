@@ -1,7 +1,7 @@
 const models = require("../../app/models/index");
 
 exports.getDoctors = (req, res) => {
-  models.Medicos.findAll({
+  models.Doctors.findAll({
     // where: {
     //   nome: "Marisa"
     // },
@@ -27,14 +27,14 @@ exports.getDoctors = (req, res) => {
 //     crm: "12234/RJ"
 //   }).save();
 
-//   models.Medicos.update(
-//     {
-//         nome: "Marisa Monte"
-//     },
-//     {
-//         where: {
-//             nome: "Marisa"
-//         }
-//     }
-//   );
+  models.Doctors.update(
+    {
+        nome: "Marisa Monte"
+    },
+    {
+        where: {
+            nome: "Marisa"
+        }
+    }
+  );
 };

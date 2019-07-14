@@ -1,7 +1,21 @@
 const express = require('express');
 const router = express.Router();
+const doctorsController = require('../controllers/doctorsController');
 
-router.get('/', (req, res, next)=>{
+
+router.get('/', (req, res)=>{
+    doctorsController.getDoctors(req, res)
+})
+
+router.post('/', (req, res)=>{
+    doctorsController.insertDoctor(req, res)
+})
+
+router.post('/update', (req, res)=>{
+    doctorsController.updateDoctor(req, res)
+})
+
+router.get('/products', (req, res, next)=>{
     res.status(200).json({
         message: 'Handling GET requests to /products'
     });

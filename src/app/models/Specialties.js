@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Especialidades = sequelize.define('Specialties', {
+    const Specialties = sequelize.define('Specialties', {
       specialty: DataTypes.STRING(45),
     });
   
