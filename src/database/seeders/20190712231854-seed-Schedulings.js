@@ -5,7 +5,7 @@ module.exports = {
     {
       date: '2019-10-25',
       time: '10:00:00',
-      id_patient: 1,
+      id_patient: null,
       id_doctor: 1,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -21,7 +21,7 @@ module.exports = {
     {
       date: '2019-07-31',
       time: '14:00:00',
-      id_patient: 3,
+      id_patient: null,
       id_doctor: 2,
       createdAt: new Date(),
       updatedAt: new Date()

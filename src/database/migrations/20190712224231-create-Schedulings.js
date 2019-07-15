@@ -22,7 +22,7 @@ module.exports = {
       },
 
       id_patient: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER,
         references: {
           model: 'Patients',
