@@ -80,4 +80,6 @@ exports.deleteDoctor = (req, res) => {
         res.status(400).send({ message: "an error has occurred", err })
     })
 
-} 
+}
+
+

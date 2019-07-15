@@ -6,6 +6,7 @@ const doctorRoutes = require('./src/api/routes/doctors');
 const patientRoutes = require('./src/api/routes/patients');
 const loginRoutes = require('./src/api/routes/login');
 const schedulingRoutes = require('./src/api/routes/schedulings');
+const specialitiesRoutes = require('./src/api/routes/specialties');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,6 +26,7 @@ app.use('/', loginRoutes);
 app.use('/medicos', doctorRoutes);
 app.use('/pacientes', patientRoutes);
 app.use('/agendamentos', schedulingRoutes);
+app.use('/especialidades', specialitiesRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');

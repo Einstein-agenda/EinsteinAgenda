@@ -1,7 +1,18 @@
 const models = require('../../app/models/index');
 
 exports.getSchedulings = (req, res) => {
-    models.Schedulings.findAll().then(scheduling => {
+    models.Schedulings.findAll({
+        where:{
+            id_patient: null
+        },
+        include:[
+            {
+                model:models.Doctors,
+
+            }
+        ]
+    }).then(scheduling => {
+
         res.send(scheduling)
     }).catch(err => {
         res.status(400).send({ message: 'an error has occurred', err })
@@ -12,6 +23,18 @@ exports.getOneScheduling = (req, res) => {
     models.Schedulings.findOne({
         where: {
             id: req.params.id
+        }
+    }).then(scheduling => {
+        res.send(scheduling)
+    }).catch(err => {
+        res.status(400).send({ message: 'an error has occurred', err })
+    })
+}
+
+exports.getSchedulingsByUser = (req, res) => {
+    models.Schedulings.findAll({
+        where: {
+            id_patient: req.params.id_patient
         }
     }).then(scheduling => {
         res.send(scheduling)
