@@ -15,7 +15,7 @@ exports.getPatientCredentials = (req, res) => {
             password: req.body.password,
         }
     }).then(data => {
-        if (data === 1) {
+        if (data) {
             res.status(200).send({ message: "OK" });
         }
         else {

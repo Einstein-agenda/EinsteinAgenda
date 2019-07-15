@@ -21,7 +21,7 @@ app.use((req, res, next) => {
     next();
 });
  
-app.use('/login', loginRoutes); 
+app.use('/', loginRoutes); 
 app.use('/medicos', doctorRoutes);
 app.use('/pacientes', patientRoutes);
 app.use('/agendamentos', schedulingRoutes);

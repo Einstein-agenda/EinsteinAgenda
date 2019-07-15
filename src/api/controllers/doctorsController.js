@@ -15,7 +15,12 @@ exports.getDoctorCredentials = (req, res) => {
             password: req.body.password,
         }
     }).then(doctor => {
-        res.send(doctor)
+        if (doctor) {
+            res.status(200).send({ message: "OK" });
+        }
+        else {
+            res.status(404).send({ message: "record not found" })
+        }
     }).catch(err => {
         res.status(400).send({ message: 'an error has occurred', err })
     })
