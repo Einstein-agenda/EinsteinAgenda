@@ -2,6 +2,8 @@ module.exports = (sequelize, DataTypes) => {
   const Doctors = sequelize.define('Doctors', {
     name: DataTypes.STRING(45),
     crm: DataTypes.STRING(13),
+    email: DataTypes.STRING(45),
+    password: DataTypes.STRING(20),
   });
 
   Doctors.associate = (models) => {

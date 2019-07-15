@@ -22,6 +22,16 @@ module.exports = {
         unique: true,
       },
 
+      email: {
+        allowNull: false,
+        type: DataTypes.STRING(45),
+      },
+
+      password: {
+        allowNull: false,
+        type: DataTypes.STRING(20),
+      },
+
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,
 
