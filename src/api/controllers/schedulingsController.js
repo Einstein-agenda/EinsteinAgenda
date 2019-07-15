@@ -2,12 +2,31 @@ const models = require('../../app/models/index');
 
 exports.getSchedulings = (req, res) => {
     models.Schedulings.findAll({
-        where:{
-            id_patient: null
+        where: {
+
         },
-        include:[
+        include: [
             {
-                model:models.Doctors,
+                model: models.Doctors,
+
+            }
+        ]
+    }).then(scheduling => {
+
+        res.send(scheduling)
+    }).catch(err => {
+        res.status(400).send({ message: 'an error has occurred', err })
+    })
+}
+
+exports.getSchedulingsBySpecialty = (req, res) => {
+    models.Schedulings.findAll({
+        where: {
+            specialty: req.params.Doctor.specialty
+        },
+        include: [
+            {
+                model: models.Doctors,
 
             }
         ]
@@ -31,10 +50,32 @@ exports.getOneScheduling = (req, res) => {
     })
 }
 
-exports.getSchedulingsByUser = (req, res) => {
+exports.getSchedulingsByPatient = (req, res) => {
     models.Schedulings.findAll({
         where: {
             id_patient: req.params.id_patient
+        }, include: [
+            {
+                model: models.Doctors,
+
+            }
+        ]
+    }).then(scheduling => {
+        res.send(scheduling)
+    }).catch(err => {
+        res.status(400).send({ message: 'an error has occurred', err })
+    })
+}
+exports.getSchedulingsByDoctor = (req, res) => {
+    const { Op } = Sequelize.Op;
+    models.Schedulings.findAll({
+        where: {
+            id_doctor: req.params.id_doctor,
+            id_patient: {
+                [Op.ne]: null
+            }
+        }, include: {
+            model: models.Patients
         }
     }).then(scheduling => {
         res.send(scheduling)
@@ -54,11 +95,10 @@ exports.insertScheduling = (req, res) => {
 }
 
 exports.updateScheduling = (req, res) => {
-    const id = req.params.id;
     const scheduling = req.body;
     models.Schedulings.update(scheduling, {
         where: {
-            id: id
+            id: req.params.id
         }
     }).then(data => {
         res.send(data)

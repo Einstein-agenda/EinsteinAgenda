@@ -1,7 +1,7 @@
 const models = require('../../app/models/index');
 
 exports.getSpecialties = (req, res) => {
-    models.Specialties.findAll().then(specialties => {
+    models.Doctors.findAll().then(specialties => {
         res.status(200).send(specialties);
     }).catch(err => {
         res.status(400).send({ message: 'an error has occurred', err })

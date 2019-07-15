@@ -7,8 +7,12 @@ router.get('/', (req, res)=>{
     schedulingController.getSchedulings(req, res)
 })
 
-router.get('/:id', (req, res)=>{
-    schedulingController.getOneScheduling(req, res)
+router.get('/medico/:id_doctor', (req, res)=>{
+    schedulingController.getSchedulingsByDoctor(req, res)
+}
+)
+router.get('/paciente/:id_patient', (req, res)=>{
+    schedulingController.getSchedulingsByPatient(req, res)
 })
 
 router.post('/', (req, res)=>{

@@ -29,7 +29,15 @@ exports.getDoctorCredentials = (req, res) => {
 exports.getOneDoctor = (req, res) => {
     models.Doctors.findOne({
         where: {
-            id: req.params.id
+            id: req.params.id,
+            incude:[
+                {
+                    model:models.Schedulings,
+                    where:{
+                        id_patient: null,
+                    }
+                }
+            ]
         }
     }).then(doctor => {
         res.send(doctor)
@@ -81,5 +89,7 @@ exports.deleteDoctor = (req, res) => {
     })
 
 }
+
+
 
 

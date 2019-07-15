@@ -11,8 +11,6 @@ router.get('/:id', (req, res)=>{
     doctorsController.getOneDoctor(req, res)
 })
 
-
-
 router.post('/', (req, res)=>{
     doctorsController.insertDoctor(req, res)
 })

@@ -22,6 +22,11 @@ module.exports = {
         unique: true,
       },
 
+      specialty: {
+        allowNull: false,
+        type: DataTypes.STRING(45),
+      },
+
       email: {
         allowNull: false,
         type: DataTypes.STRING(45),

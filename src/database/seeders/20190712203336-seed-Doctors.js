@@ -3,26 +3,29 @@
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Doctors', [
     {
-      name: 'Roberto',
+      name: 'Roberto de Lima',
       crm: '12365478/SP',
+      specialty: 'Ortopedista',
       email: 'roberto@gmail.com',
-      password: '147852',
+      password: '1234',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      name: 'Juliana',
+      name: 'Juliana Pereira',
       crm: '45321/SP',
+      specialty: 'Clínico Geral',
       email: 'juliana@gmail.com',
-      password: '123456',
+      password: '1234',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      name: 'Marisa',
+      name: 'Marisa Montebranco',
       crm: '18743654/SP',
+      specialty: 'Pediatra',
       email: 'marisa@gmail.com',
-      password: '0000',
+      password: '1234',
       createdAt: new Date(),
       updatedAt: new Date()
     }
