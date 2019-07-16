@@ -8,9 +8,13 @@ router.get('/', (req, res)=>{
 })
 
 router.get('/medico/:id_doctor', (req, res)=>{
+    schedulingController.getSchedulingsByDoctorPatinentNull(req, res)
+})
+
+router.get('/medico/consultas/:id_doctor', (req, res)=>{
     schedulingController.getSchedulingsByDoctor(req, res)
-}
-)
+})
+
 router.get('/paciente/:id_patient', (req, res)=>{
     schedulingController.getSchedulingsByPatient(req, res)
 })
@@ -23,7 +27,7 @@ router.put('/:id', (req, res)=>{
     schedulingController.updateScheduling(req, res)
 })
 
-router.delete('/:id', (req, res)=>{
+router.delete('/apagar/:id', (req, res)=>{
     schedulingController.deleteScheduling(req, res)
 })
 

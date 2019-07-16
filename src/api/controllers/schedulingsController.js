@@ -1,4 +1,6 @@
 const models = require('../../app/models/index');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 exports.getSchedulings = (req, res) => {
     models.Schedulings.findAll({
@@ -66,8 +68,24 @@ exports.getSchedulingsByPatient = (req, res) => {
         res.status(400).send({ message: 'an error has occurred', err })
     })
 }
+exports.getSchedulingsByDoctorPatinentNull = (req, res) => {
+    
+    models.Schedulings.findAll({
+        where: {
+            id_doctor: req.params.id_doctor,
+            id_patient: null
+        }, include: {
+            model: models.Patients
+        }
+    }).then(scheduling => {
+        res.send(scheduling)
+    }).catch(err => {
+        res.status(400).send({ message: 'an error has occurred', err })
+    })
+}
+
 exports.getSchedulingsByDoctor = (req, res) => {
-    const { Op } = Sequelize.Op;
+    
     models.Schedulings.findAll({
         where: {
             id_doctor: req.params.id_doctor,

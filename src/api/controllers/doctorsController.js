@@ -16,7 +16,7 @@ exports.getDoctorCredentials = (req, res) => {
         }
     }).then(doctor => {
         if (doctor) {
-            res.status(200).send({ message: "OK" });
+            res.status(200).send({userId: doctor.id} );
         }
         else {
             res.status(404).send({ message: "record not found" })

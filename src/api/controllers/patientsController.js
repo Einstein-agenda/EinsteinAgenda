@@ -16,7 +16,7 @@ exports.getPatientCredentials = (req, res) => {
         }
     }).then(data => {
         if (data) {
-            res.status(200).send({ message: "OK" });
+            res.status(200).send({ userId: data.id});
         }
         else {
             res.status(404).send({ message: "record not found" })
