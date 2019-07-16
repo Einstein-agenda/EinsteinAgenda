@@ -9,10 +9,13 @@ exports.getSpecialties = (req, res) => {
 }
 
 exports.getDoctorsBySpecialty = (req, res) => {
-    models.Doctors.findAll({
-        where:{
-           specialty: req.params.specialty,
-        }
+    models.Schedulings.findAll({
+            include:{
+                model:models.Doctors,
+                where:{
+                    specialty: req.params.specialty,
+                }
+            },
     }).then(doctors => {
         res.status(200).send(doctors);
     }).catch(err => {
