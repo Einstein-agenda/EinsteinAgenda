@@ -6,7 +6,7 @@ router.get('/', (req, res)=>{
     specialtiesController.getSpecialties(req, res)
 })
 
-router.get('/:id_specialty', (req, res)=>{
+router.get('/:specialty', (req, res)=>{
     specialtiesController.getDoctorsBySpecialty(req, res)
 })
 

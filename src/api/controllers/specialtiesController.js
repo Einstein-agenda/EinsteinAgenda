@@ -9,12 +9,9 @@ exports.getSpecialties = (req, res) => {
 }
 
 exports.getDoctorsBySpecialty = (req, res) => {
-    models.Specialties.findAll({
+    models.Doctors.findAll({
         where:{
-           id_specialty: req.params.id_specialty,
-           include:{
-               model:models.Doctors
-           } 
+           specialty: req.params.specialty,
         }
     }).then(doctors => {
         res.status(200).send(doctors);
